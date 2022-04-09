@@ -1,7 +1,7 @@
-var express = require('express');
+import express from 'express';
 
-var router = express.Router();
-router.get('/', function(req, res, next) {
-  return res.status(200).json({ message: 'Welcome to Express API template' });
-});
-module.exports = router;
+const indexRouter = express.Router();
+
+indexRouter.get('/', (req, res) => res.status(200).json({ message: 'Different response to check still working' }));
+
+export default indexRouter;
