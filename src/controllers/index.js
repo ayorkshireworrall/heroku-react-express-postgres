@@ -1,2 +1,2 @@
-export * from './home';
-export * from './messages';
+export * from './home.js';
+export * from './messages.js';

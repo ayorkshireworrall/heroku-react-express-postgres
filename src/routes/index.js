@@ -1,6 +1,6 @@
 import express from 'express';
-import { indexPage, messagesPage, addMessage } from '../controllers';
-import { modifyMessage, performAsyncAction } from '../middleware';
+import { indexPage, messagesPage, addMessage } from '../controllers/index.js';
+import { modifyMessage, performAsyncAction } from '../middleware/index.js';
 
 const indexRouter = express.Router();
 

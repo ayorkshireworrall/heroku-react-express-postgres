@@ -1,9 +1,9 @@
-import { pool } from '../models/pool';
+import { pool } from '../models/pool.js';
 import {
   insertMessages,
   dropMessagesTable,
   createMessageTable,
-} from './queries';
+} from './queries.js';
 
 export const executeQueryArray = async arr => new Promise(resolve => {
   const stop = arr.length;
