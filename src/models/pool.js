@@ -1,8 +1,8 @@
 import pkg from 'pg';
 import dotenv from 'dotenv';
-import { connectionString } from '../settings.js';
+import { connectionString, environmentName } from '../settings.js';
 
 const { Pool } = pkg;
 dotenv.config();
 
-export const pool = new Pool({ connectionString, ssl: {rejectUnauthorized: false} });
+export const pool = environmentName === 'LOCAL' ? new Pool({ connectionString }) : new Pool({ connectionString, ssl: {rejectUnauthorized: false} });
