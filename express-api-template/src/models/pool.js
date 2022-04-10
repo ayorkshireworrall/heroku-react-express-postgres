@@ -1,7 +1,8 @@
 import pkg from 'pg';
-const { Pool } = pkg;
 import dotenv from 'dotenv';
 import { connectionString } from '../settings';
+
+const { Pool } = pkg;
 dotenv.config();
 
 export const pool = new Pool({ connectionString });

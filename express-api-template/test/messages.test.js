@@ -27,7 +27,7 @@ describe('Messages', () => {
         res.body.messages.forEach(m => {
             expect(m).to.have.property('id');
             expect(m).to.have.property('name', data.name);
-            expect(m).to.have.property('message', data.message);
+            expect(m).to.have.property('message', `Says: ${data.message}`);
           });
           done();
       })

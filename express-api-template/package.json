@@ -15,6 +15,7 @@
     "runQuery": "babel-node ./src/utils/runQuery --es-module-specifier-resolution=node"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.0",
