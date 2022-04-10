@@ -24,3 +24,5 @@ yarn-error.log*
 
 #pseudo-commit
 pseudo-commit.bat
+
+push.bat
