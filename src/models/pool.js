@@ -5,4 +5,4 @@ import { connectionString } from '../settings.js';
 const { Pool } = pkg;
 dotenv.config();
 
-export const pool = new Pool({ connectionString });
+export const pool = new Pool({ connectionString, ssl: {rejectUnauthorized: false} });
