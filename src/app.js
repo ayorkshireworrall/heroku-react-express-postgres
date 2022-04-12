@@ -3,8 +3,10 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import indexRouter from './routes/index.js';
 import cors from 'cors';
+import initialiser from './initialiser/index.js';
 
 const app = express();
+initialiser();
 
 app.use(logger('dev'));
 app.use(express.json());
