@@ -13,7 +13,7 @@ export const Message = sequelize.define('message', {
         type: DataTypes.STRING,
         unique: true,
         validate: {
-            is: /^\w{3,}$/
+            is: /^[a-zA-Z0-9_-]{3,}$/
         }
     },
     message: {

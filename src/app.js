@@ -4,9 +4,10 @@ import cookieParser from 'cookie-parser';
 import indexRouter from './routes/index.js';
 import cors from 'cors';
 import initialiser from './initialiser/index.js';
+import { initTestData } from './settings.js';
 
 const app = express();
-initialiser();
+initialiser(initTestData);
 
 app.use(logger('dev'));
 app.use(express.json());

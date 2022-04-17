@@ -1,13 +1,18 @@
 import { Sequelize } from 'sequelize';
-import { connectionString, environmentName } from '../settings.js';
+import { connectionString, environmentName, databaseLogging } from '../settings.js';
 
-export const sequelize = environmentName === 'LOCAL' ? 
-    new Sequelize(connectionString) : 
-    new Sequelize(connectionString, {
-        dialectOptions: {
-            ssl: {
-                require: true, // This will help you. But you will see nwe error
-                rejectUnauthorized: false // This line will fix new error
-            }
+const options = environmentName === 'LOCAL' ? 
+{
+    logging: databaseLogging
+} :
+{
+    dialectOptions: {
+        ssl: {
+            require: true, // This will help you. But you will see nwe error
+            rejectUnauthorized: false // This line will fix new error
         }
-    });
+    },
+    logging: databaseLogging
+}
+
+export const sequelize = new Sequelize(connectionString, options);
