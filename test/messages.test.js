@@ -50,4 +50,16 @@ describe('Messages', () => {
         done();
       })
   })
+
+  it('deletes message with name', done => {
+    server
+    .delete(`${BASE_URL}/messages/delete-me`)
+    .send()
+    .expect(200)
+    .end((err, res) => {
+      expect(res.status).to.equal(200);
+      expect(res.body.data).to.equal(1)
+      done();
+    })
+  })
 });

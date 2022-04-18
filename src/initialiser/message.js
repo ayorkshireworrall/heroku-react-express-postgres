@@ -19,6 +19,7 @@ const populateCommonData = async () => {
 
 const populateTestData = async () => {
     await Message.create({'name': 'hello', 'message': 'Hi you grob!'})
+    await Message.create({'name': 'delete-me', 'message': 'To be deleted'})
 }
 
 export const messageInitialiser = async initTestData => {
